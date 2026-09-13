@@ -30,3 +30,23 @@ model = RandomForestClassifier(
 model.fit(X_train, y_train)
 
 print("Random Forest model trained successfully!")
+import joblib
+
+joblib.dump({
+    "model": model,
+    "scaler": scaler,
+    "features": ['N', 'P', 'K', 'temperature', 'humidity', 'ph', 'rainfall'],
+    "classes": list(model.classes_)
+}, "crop_model.joblib")
+
+print("Model saved successfully as crop_model.joblib!")
+import joblib
+
+joblib.dump({
+    "model": model,
+    "scaler": scaler,
+    "features": ['N', 'P', 'K', 'temperature', 'humidity', 'ph', 'rainfall'],
+    "classes": list(model.classes_)
+}, "crop_model.joblib")
+
+print("Model saved successfully as crop_model.joblib!")
